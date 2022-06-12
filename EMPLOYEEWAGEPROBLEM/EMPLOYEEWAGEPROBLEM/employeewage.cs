@@ -6,22 +6,29 @@ using System.Threading.Tasks;
 
 namespace EMPLOYEEWAGEPROBLEM
 {
-    internal class EmpPresentAbsent
+    internal class DailyEmpWage
     {
-        public int EmpPresent = 1;
-
-        public void CheckEmpPresentAbsent()
+        int IS_EmpPresent = 1;
+        int Wage_Per_Hour = 20;
+        int FullDay_Hour = 8;
+        int DailyWage = 0;
+        public void CheckDailyEmpWg()
         {
-            Random EmpCheck = new Random();
-            int value = EmpCheck.Next(0, 2);
-            if (value == EmpPresent)
+            Random ChechEmp = new Random();
+            int value = ChechEmp.Next(0, 2);
+            if (value == IS_EmpPresent)
             {
-                Console.WriteLine("Employee is Present");
+                DailyWage = FullDay_Hour * Wage_Per_Hour;
+
+                Console.WriteLine("Employee Present and DailyWage = {0}", +DailyWage);
+
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
+                Console.WriteLine("Employee Absent");
+
             }
+
         }
 
     }
