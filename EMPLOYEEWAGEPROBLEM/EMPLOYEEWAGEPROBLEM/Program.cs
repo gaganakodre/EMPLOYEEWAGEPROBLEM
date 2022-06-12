@@ -5,7 +5,7 @@
         public static void Main(string[]args)
         {
             Console.WriteLine("welcome to employee wage problem");
-            CalculatingWagesForMonth prg = new CalculatingWagesForMonth();
+            EmployeeWage prg = new EmployeeWage();
             prg.CalculateEmpWage();
         }
     }
