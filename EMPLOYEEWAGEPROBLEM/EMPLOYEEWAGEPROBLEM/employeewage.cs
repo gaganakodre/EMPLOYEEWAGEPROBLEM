@@ -15,24 +15,19 @@ namespace EMPLOYEEWAGEPROBLEM
         float EmpDailyWage = 0;
         public float TotalWage = 0;
         private Dictionary<String, Company> Companies = new Dictionary<String, Company>();
-        //public string[] CompanyList;
-        public ArrayList CompanyList;
-        
+        public string[] CompanyList;
         public int ArrayIndex = 0;
 
         public EmployeeWageComputation(int Number)
         {
-            //CompanyList = new string[2 * Number];
-            CompanyList = new ArrayList();
+            CompanyList = new string[2 * Number];
         }
 
         public void AddCompany(String CompanyName, int EmpWagePerhour, int FullTime_WorkingHrs_PerDay, int PartTime_WorkingHours_PerDay, int MAX_WORKING_HRS, int MAX_WORKING_DAYS)
         {
             Company company = new Company(CompanyName.ToLower(), EmpWagePerhour, FullTime_WorkingHrs_PerDay, PartTime_WorkingHours_PerDay, MAX_WORKING_HRS, MAX_WORKING_DAYS);
             Companies.Add(CompanyName.ToLower(), company);
-            //CompanyList[ArrayIndex] = CompanyName;
-            CompanyList.Add(CompanyName);
-            CompanyList.Add(EmpWagePerhour * FullTime_WorkingHrs_PerDay);
+            CompanyList[ArrayIndex] = CompanyName;
             ArrayIndex++;
         }
 
@@ -79,17 +74,16 @@ namespace EMPLOYEEWAGEPROBLEM
                 Monthly_Wage += TotalWage;
 
             }
-            //CompanyList[ArrayIndex] = Convert.ToString(Monthly_Wage);
-            CompanyList.Add(Monthly_Wage);
-                ArrayIndex++;
+            CompanyList[ArrayIndex] = Convert.ToString(Monthly_Wage);
+            ArrayIndex++;
             Console.WriteLine("Total working days :" + (DayNumber - 1) + "\n Total working :" + TotalWorkingHrs + "" + "\n monthlywage :" + Monthly_Wage + "");
 
         }
         public void displayArray()
         {
-            for(int i=0; i<CompanyList.Count; i+=2)
+            for (int i = 0; i < CompanyList.Length; i += 2)
             {
-                Console.WriteLine("Monthly wage for {0} is {1}" ,CompanyList[i], CompanyList[i+1]);  
+                Console.WriteLine("Monthly wage for {0} is {1}", CompanyList[i], CompanyList[i + 1]);
             }
         }
 
