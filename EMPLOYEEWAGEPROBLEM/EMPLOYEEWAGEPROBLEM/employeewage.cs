@@ -81,14 +81,14 @@ namespace EMPLOYEEWAGEPROBLEM
             //CompanyList[ArrayIndex] = Convert.ToString(Monthly_Wage);
             CompanyList.Add(Monthly_Wage);
             ArrayIndex++;
-            Console.WriteLine("Total working days :" + (DayNumber - 1) + "\n Total working :" + TotalWorkingHrs + "" + "\n monthlywage :" + Monthly_Wage + "");
+            //Console.WriteLine("Total working days :" + (DayNumber - 1) + "\n Total working :" + TotalWorkingHrs + "" + "\n monthlywage :" + Monthly_Wage + "");
 
         }
         public void displayArray()
         {
             for (int i = 0; i < CompanyList.Count; i += 3)
             {
-                Console.WriteLine("Monthly wage for {0} is {1} and {2}", CompanyList[i], CompanyList[i + 1],CompanyList[i+2]);
+                Console.WriteLine("Monthly wage for {0} with \n DailyWage={1} is {2}\n", CompanyList[i], CompanyList[i + 1],CompanyList[i+2]);
             }
         }
 
