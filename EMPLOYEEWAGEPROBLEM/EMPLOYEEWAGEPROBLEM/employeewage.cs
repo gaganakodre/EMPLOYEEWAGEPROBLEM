@@ -72,10 +72,10 @@ namespace EMPLOYEEWAGEPROBLEM
                 }
                 EmpDailyWage = EmpWorkingHours * company.EmpWagePerHour;
 
-                TotalWage += EmpDailyWage;
+               // TotalWage += EmpDailyWage;
                 DayNumber++;
                 TotalWorkingHrs += EmpWorkingHours;
-                Monthly_Wage += TotalWage;
+                Monthly_Wage += EmpDailyWage;
 
             }
             //CompanyList[ArrayIndex] = Convert.ToString(Monthly_Wage);
